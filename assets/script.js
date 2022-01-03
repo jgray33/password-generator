@@ -1,9 +1,11 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
+
 // First prompt: password length
 function passwordPrompt () {
-let passwordLength = prompt ("Length of password\n Password must be at least 8 characters and no more than 124 characters",
+const passwordLength = prompt ("Length of password\n Password must be at least 8 characters and no more than 124 characters",
 "Enter a number and press ok") 
 const x = passwordLength
 switch(true) {
@@ -23,11 +25,13 @@ switch(true) {
     alert("You have not entered a number")
     passwordPrompt()
     }
-}
+        }
+
+
 
 // Prompt asking if user wants lowercase to be included
 function lowerCasePrompt () {
-  let lowerCase = prompt ("Do you want to include lowercase?")
+  const lowerCase = prompt ("Do you want to include lowercase?")
   switch(lowerCase.toLowerCase()) {
     case "yes":
     alert("You have selected to include lowercase")
@@ -41,11 +45,12 @@ function lowerCasePrompt () {
       alert("Please enter yes or no")
     lowerCasePrompt()
   }
+  
   }
 
 // Prompt asking if user wants uppercase to be included
 function upperCasePrompt () {
-  let upperCase = prompt ("Do you want to include uppercase?")
+  const upperCase = prompt ("Do you want to include uppercase?")
   switch(upperCase.toLowerCase()) {
     case "yes":
     alert("You have selected to include uppercase")
@@ -59,11 +64,12 @@ function upperCasePrompt () {
     alert("Please enter yes or no and press OK")
     upperCasePrompt()
   }
+  
 }
 
 // Prompt asking if user want to include numerical values
 function numericalCharPrompt () {
-  let numericalChar = prompt ("Do you want to include numerical values?")
+  const numericalChar = prompt ("Do you want to include numerical values?")
   switch(numericalChar.toLowerCase()) {
     case "yes":
     alert("You have selected to include numerical values")
@@ -77,10 +83,12 @@ function numericalCharPrompt () {
       alert("Please enter yes or no and press OK")
       upperCasePrompt()
   }
+  
 }
 
+// Prompt asking if user wants to include special characters
 function specialCharPrompt () {
-  let specialChar = prompt ("Do you want to include special characters?")
+  const specialChar = prompt ("Do you want to include special characters?")
   switch(specialChar.toLowerCase()) {
     case "yes":
       alert("You have selected to include special characters")
@@ -91,15 +99,9 @@ function specialCharPrompt () {
       default:
         alert("Please enter yes or no and press OK")
         specialCharPrompt()
+    }
+    checkRequirements()
   }
-}
-
-/* 
-let specialChar = prompt ("Do you want to include special characters?\n Type yes or no and press ok", 
-"yes")
-}
-*/
- 
 
 
 
