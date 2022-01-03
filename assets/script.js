@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Prompts for asking password requirements
+// First prompt: password length
 function passwordPrompt () {
 let passwordLength = prompt ("Length of password\n Password must be at least 8 characters and no more than 124 characters",
 "Enter a number and press ok") 
@@ -25,14 +25,17 @@ switch(true) {
     }
 }
 
+// Prompt asking if user wants lowercase to be included
 function lowerCasePrompt () {
   let lowerCase = prompt ("Do you want to include lowercase?")
   switch(lowerCase.toLowerCase()) {
     case "yes":
     alert("You have selected to include lowercase")
+    upperCasePrompt()
     break;
     case "no":
-    alert("You have selected not to include lowercase")
+    alert("You have selected NOT to include lowercase")
+    upperCasePrompt()
     break;
     default:
       alert("Please enter yes or no")
@@ -40,29 +43,58 @@ function lowerCasePrompt () {
   }
   }
 
-
-
-/*if (passwordLength === "") {
-  alert("You must enter a number between 8 and 124")
-    } else if (passwordLength < 8) {
-  alert("Password should be at least 8 characters") 
-      } else if (passwordLength > 124 ) {
-      alert("Password can't be any more than 124 characters")
-    } 
+// Prompt asking if user wants uppercase to be included
+function upperCasePrompt () {
+  let upperCase = prompt ("Do you want to include uppercase?")
+  switch(upperCase.toLowerCase()) {
+    case "yes":
+    alert("You have selected to include uppercase")
+    numericalCharPrompt()
+    break;
+    case "no":
+    alert("You have selected NOT to include lowercase")
+    numericalCharPrompt()
+    break;
+    default:
+    alert("Please enter yes or no and press OK")
+    upperCasePrompt()
   }
-  */
+}
 
-  /*
-  alert("You have selected your password to be " + passwordLength + " characters long")
-  passwordPrompt()
-  */
+// Prompt asking if user want to include numerical values
+function numericalCharPrompt () {
+  let numericalChar = prompt ("Do you want to include numerical values?")
+  switch(numericalChar.toLowerCase()) {
+    case "yes":
+    alert("You have selected to include numerical values")
+    specialCharPrompt()
+    break;
+    case "no":
+    alert("You have selected NOT to include numerical values")
+    specialCharPrompt()
+    break;
+    default:
+      alert("Please enter yes or no and press OK")
+      upperCasePrompt()
+  }
+}
 
-/* let lowerCase = prompt ("Do you want to include lowercase?\n Type yes or no and press ok",
-"yes")
-let upperCase = prompt ("Do you want to include uppercase?\n Type yes or no and press ok", 
-"yes")
-let numericChar = prompt ("Do you want to include numbers?\n Type yes or no and press ok",
-"yes")
+function specialCharPrompt () {
+  let specialChar = prompt ("Do you want to include special characters?")
+  switch(specialChar.toLowerCase()) {
+    case "yes":
+      alert("You have selected to include special characters")
+    break;
+    case "no":
+      alert("You have selected NOT to include special characters")
+      break;
+      default:
+        alert("Please enter yes or no and press OK")
+        specialCharPrompt()
+  }
+}
+
+/* 
 let specialChar = prompt ("Do you want to include special characters?\n Type yes or no and press ok", 
 "yes")
 }
