@@ -27,12 +27,16 @@ switch(true) {
 
 function lowerCasePrompt () {
   let lowerCase = prompt ("Do you want to include lowercase?")
-  switch(lowerCase) {
+  switch(lowerCase.toLowerCase()) {
     case "yes":
     alert("You have selected to include lowercase")
     break;
+    case "no":
+    alert("You have selected not to include lowercase")
+    break;
     default:
       alert("Please enter yes or no")
+    lowerCasePrompt()
   }
   }
 
