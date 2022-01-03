@@ -1,16 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-function passwordLength() {
-  let text; 
-  let person = prompt("Length of password", 
-  "At least 8 characters and no more than 124 characters");
-  if (person == null || person == "" ) {
-    text = "User cancelled the prompt";
-  } else { 
-    characterTypes()
-      }
-  }
+
+function passwordPrompt () {
+let passwordLength = prompt ("Length of password",
+"At least 8  characters and no more than 124 characters") 
+}
+
 
 
 // Write password to the #password input
