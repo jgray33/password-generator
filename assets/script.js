@@ -1,6 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
+
+
 function generatePassword() {
   console.log("button clicked")
 // 1. Prompt user for criteria
@@ -23,26 +26,32 @@ var passwordLength = prompt("How many characters do you want your password to be
 var upperCase = confirm("Would you like to include upperCase?\n Press okay to include uppercase or cancel to NOT include uppercase")
 
 //  c. lower case 
-var lowerCase = confirm("Would you like to include lowercase?\n Press okay to include uppercase or cancel to NOT include uppercase")
+var lowerCase = confirm("Would you like to include lowercase?\n Press okay to include uppercase or cancel to NOT include lowercase")
 
 
 //  d. special characters
-var specialChar = confirm("Would you like to include special characters\n Press okay to include uppercase or cancel to NOT include uppercase")
+var specialChar = confirm("Would you like to include special characters\n Press okay to include uppercase or cancel to NOT include special characters")
 
 
 //  e. numerical characters
-var numericalChar = confirm("Would you like to include numerical characters?\n Press okay to include uppercase or cancel to NOT include uppercase")
+var numericalChar = confirm("Would you like to include numerical characters?\n Press okay to include uppercase or cancel to NOT include numerical characters")
 
 // 2. Validate inputs 
 if (upperCase == false &&
   lowerCase == false &&
   specialChar == false &&
   numericalChar == false) {
-    alert("You must select at least one")
+    alert("You must select to choose at least one ")
   }
 // 3. Generate password
+
+let upperCaseChar = [A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]
+let lowerCaseCar = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,Z]
+let specialCharList = [!,",#,$,%,&,',(,),*,+,,,-,.,/,:,;,<,=,>,?,@,[,,^,_,`,{,|,},~]
+let numbers =
+
 // 4. Return password
-  return "Password"
+    return "Password"
 }
 
 
@@ -57,6 +66,8 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
 
 /*switch(passwordLength) {
   case "":
