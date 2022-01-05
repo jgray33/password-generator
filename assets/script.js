@@ -45,6 +45,15 @@ if (upperCase == false &&
   }
 // 3. Generate password
 
+if (upperCase == true ) {
+
+}
+
+
+// Math.floor(Math.random() * )
+
+// Password = 
+
 let upperCaseChar = [A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]
 let lowerCaseCar = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
 let specialCharList = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[",","^",_","`","{","|","}","~"]
