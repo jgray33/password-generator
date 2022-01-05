@@ -2,23 +2,28 @@
 var generateBtn = document.querySelector("#generate");
 
 
+const upperCaseChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+const lowerCaseCar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const specialCharList = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[",","^",_","`","{","|","}","~"]
+const numericalList = [1,2,3,4,5,6,7,8,9,0]
 
+var pwChoices = []
+var finalPW = ""
 
 function generatePassword() {
   console.log("button clicked")
 // 1. Prompt user for criteria
+let passwordLength = 0
 //  a. 8 =< password length =< 124
-var passwordLength = prompt("How many characters do you want your password to be?" , "")
- if (passwordLength < 8) {
+ passwordLength = prompt("How many characters do you want your password to be?" , "")
+ if (parseInt(passwordLength) < 8 || parseInt(passwordLength)> 124  ) {
   alert("Your password must be more than 8 characters and less than 124")
-  generatePassword ()
-  } else if (passwordLength > 124) {
-    alert("Your password must not be more than 124 characters")
-    generatePassword ()
-  } else if (isNaN(passwordLength)) {
+  generatePassword () 
+    } 
+    else if (isNaN(parseInt(passwordLength)) || passwordLength == "") {
     generatePassword ()
     alert("Please enter a number between 8 and 124")
-  } else if (8 <= passwordLength <= 124) {
+  } else  {
     console.log("Password length is" + passwordLength)
       }
 
@@ -41,29 +46,35 @@ if (upperCase == false &&
   lowerCase == false &&
   specialChar == false &&
   numericalChar == false) {
-    alert("You must select to choose at least one ")
+    alert("You must choose at least one ")
   }
 // 3. Generate password
 
 if (upperCase == true ) {
+ pwChoices = pwChoices.concat(upperCaseChar)
+ }
 
+ if (lowerCase == true) {
+   pwChoices = pwChoices.concat(lowerCaseCar)
+ }
+
+ if (specialChar == true) {
+   pwChoices = pwChoices.concat(specialCharList)
+ }
+
+ if (numericalChar == true) {
+  pwChoices = pwChoices.concat(numericalList)
 }
 
+var userChoices = pwChoices
+console.log(userChoices," final user choices ")
 
-// Math.floor(Math.random() * )
-
-// Password = 
-
-let upperCaseChar = [A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]
-let lowerCaseCar = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
-let specialCharList = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[",","^",_","`","{","|","}","~"]
-let numericalList = [1,2,3,4,5,6,7,8,9,0]
-
-
-// 4. Return password
-    return "Password"
+for (let i = 0, n=userChoices.length; i < parseInt(passwordLength); i++) {
+  finalPW += userChoices[Math.floor(Math.random() *n)]
 }
 
+return finalPW
+}
 
 
 // Write password to the #password input
