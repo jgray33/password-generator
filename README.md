@@ -30,6 +30,8 @@ Click [here](https://jgray33.github.io/password-generator/) to go to my finished
 Here is what the final project looks like:
 
 
+
+
 ## Links
 - Repository https://github.com/jgray33/password-generator
 - HTML file https://github.com/jgray33/password-generator/blob/main/index.html
